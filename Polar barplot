@@ -6,7 +6,6 @@ plt.rcParams["font.size"] = 14
 plt.rcParams['axes.edgecolor'] = 'white'
 
 data = pd.read_excel(r'Time Analysis.xlsx')
-#change radii
 N = 12
 enddata = 2*np.pi
 theta = np.linspace(0, enddata, N, endpoint=False)
