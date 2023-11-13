@@ -1,0 +1,31 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+from matplotlib_scalebar.scalebar import ScaleBar
+plt.rcParams["font.size"] = 14
+plt.rcParams['axes.edgecolor'] = 'white'
+
+data = pd.read_excel(r'Time Analysis.xlsx')
+#change radii
+N = 12
+enddata = 2*np.pi
+theta = np.linspace(0, enddata, N, endpoint=False)
+radii = data['Total']
+width = enddata / N
+colors = plt.cm.viridis_r(radii / 36)
+
+fig = plt.figure(figsize=(6,6))
+ax = plt.subplot(111, projection='polar')
+bars = ax.bar(theta, radii, width=width, bottom=0.0, color=colors, alpha=0.7, edgecolor="white")
+
+ax.spines['polar'].set_visible(False)
+ax.set_xticklabels([])
+ax.set_yticklabels([])
+ax.grid(False)
+
+# remove grey
+ax.set_theta_zero_location('N')
+#ax.set_theta_direction(-1)
+
+plt.tight_layout()
+plt.show()
