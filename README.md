@@ -2,7 +2,8 @@
 This library is being updated
 
 Completed: 
-1. Polar polar barplot
+1. Polar barplot
+2. Line barplot
 
 To be completed:
 1. ...
